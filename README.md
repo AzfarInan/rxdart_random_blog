@@ -14,3 +14,9 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+Flutter version: 3.10.5
+
+Run development using flavor:
+fvm flutter run --target lib/main_dev.dart
+fvm flutter run --target lib/main_prod.dart

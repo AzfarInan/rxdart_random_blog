@@ -5,7 +5,12 @@ import 'package:rx_dart_practise/view/modify_blog_post_page.dart';
 import 'package:rx_dart_practise/view_model/blog_posts_vm.dart';
 
 class BlogPostListPage extends StatelessWidget {
-  const BlogPostListPage({Key? key}) : super(key: key);
+  const BlogPostListPage({
+    Key? key,
+    required this.flavor,
+  }) : super(key: key);
+
+  final String flavor;
 
   BlogPostViewModel get _vm => GetIt.I<BlogPostViewModel>();
 
@@ -13,9 +18,9 @@ class BlogPostListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Blog Posts',
-          style: TextStyle(
+        title: Text(
+          'Blog Posts - $flavor',
+          style: const TextStyle(
             color: Colors.white,
           ),
         ),
