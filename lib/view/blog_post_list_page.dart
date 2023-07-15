@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:rx_dart_practise/app.dart';
 import 'package:rx_dart_practise/model/blog_post_model.dart';
 import 'package:rx_dart_practise/view/modify_blog_post_page.dart';
 import 'package:rx_dart_practise/view_model/blog_posts_vm.dart';
@@ -30,8 +31,10 @@ class BlogPostListPage extends StatelessWidget {
         stream: _vm.outBlogPostList,
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
-            return const Center(
+            return env.value == 'development' ? const Center(
               child: Text('No Data'),
+            ) : const Center(
+              child: CircularProgressIndicator(),
             );
           }
 
